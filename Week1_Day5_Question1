@@ -1,0 +1,20 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner smith = new Scanner(System.in);
+        int four,six,total;
+        four = smith.nextInt();
+        six = smith.nextInt();
+        total = (4*four)+(6*six) ;
+        System.out.println(total);
+        
+            
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
