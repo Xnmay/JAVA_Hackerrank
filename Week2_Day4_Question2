@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Solution 
+{
+  public static void main(String[] args)
+  {
+    Scanner obj = new Scanner(System.in);
+      obj.next(); obj.next(); obj.next(); obj.next();
+    int i = obj.nextInt();
+
+    if (i >= 10 && i <= 99)
+    {
+      int sum = i % 10 + i / 10;
+      int product = (i % 10) * (i / 10);
+
+        if (sum + product == i) 
+      {
+        System.out.println("Special two digit number");
+      } 
+        else 
+        {
+        System.out.println("Not a special two digit number");
+        }
+    } 
+        else
+        {
+      System.out.println("Invalid Input");
+        }
+  }
+}
