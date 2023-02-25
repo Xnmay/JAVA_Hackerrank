@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int size=obj.nextInt();
+        if(size<=0) 
+        {
+            System.out.println("Invalid Array Size");
+            return;
+        }
+        double[] arr=new double[size];
+        for(int i=0;i<size;i++)
+        {
+            arr[i]=obj.nextDouble();
+        }
+        int[] arr1=new int[size];
+        for(int i=0;i<size;i++){
+            if(arr[i]<0){
+                System.out.println("Invalid Array Elements");
+                return;
+            }
+            else
+            {
+                arr1[i]=(int)arr[i];
+            }
+        }
+        for(int i=0;i<size;i++){
+            System.out.println(arr1[i]+" ");
+        }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
