@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int amt = obj.nextInt();
+        double total;
+        double interest =(10/100.0)*amt;
+        total= amt+interest;
+        System.out.println((int)total);
+        double emi = (total/12);
+        String s = String.format("%.2f",emi);
+        System.out.println(s);
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
