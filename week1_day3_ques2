@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int num = obj.nextInt();
+        int n = (int) Math.round(Math.pow(num, 1.0/3.0));
+        
+            if(num == n*n*n)
+            {
+                System.out.println("Perfect Cube");
+            }
+        else
+        {
+                System.out.println("Not Perfect Cube");
+        }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
