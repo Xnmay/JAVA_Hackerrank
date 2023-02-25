@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String paperCode = sc.nextLine();
+        int decimal = Integer.parseInt(paperCode, 2);
+        if (decimal >= 65 && decimal <= 90) {
+            System.out.println((char) decimal);
+        } else {
+            System.out.println("INVALID PAPER CODE");
+        }
+    }
+}
