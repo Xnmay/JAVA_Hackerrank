@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String result = reverseWords(str);
+        System.out.println(result);
+    }
+    public static String reverseWords(String str) 
+    {
+        if(str == null || str.matches(".*\\d+.*")){
+            return "Invalid input";
+        }
+        String[] words = str.split("\\s+"); 
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0;i <=words.length-1; i++){
+            sb.append(reverseWord(words[i].toLowerCase()));
+            sb.append(" ");
+        }
+        sb.deleteCharAt(sb.length()-1); 
+        return sb.toString();
+    }
+    
+    public static String reverseWord(String word) {
+        StringBuilder sb = new StringBuilder(word);
+        return sb.reverse().toString();
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
