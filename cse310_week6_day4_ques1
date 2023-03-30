@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+     public static double[] average_marks(double[][] marks) {
+        double[] averages = new double[marks.length];
+        for(int i=0;i<marks.length;i++) {
+            int highestIndex=0;
+            int secondHighestIndex=1;
+            if (marks[i][1]>marks[i][highestIndex]) {
+                highestIndex=1;
+                secondHighestIndex=0;
+            }
+            for(int j=2;j<marks[i].length; j++) {
+                if(marks[i][j]>marks[i][highestIndex]) {
+                    secondHighestIndex=highestIndex;
+                    highestIndex=j;
+                } else if(marks[i][j]>marks[i][secondHighestIndex]) {
+                    secondHighestIndex = j;
+                }
+            }
+            averages[i]=(marks[i][highestIndex]+marks[i][secondHighestIndex])/ 2.0;
+        }
+        return averages;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        double[][] marks = new double[n][3];
+        for (int i = 0; i < n; i++) {
+            marks[i][0]=scanner.nextDouble();
+            marks[i][1]=scanner.nextDouble();
+            marks[i][2]=scanner.nextDouble();
+        }
+        double[] averages=average_marks(marks);
+        for (int i=0;i<n;i++) {
+            System.out.print(averages[i] + " ");
+        }
+        System.out.println();
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
