@@ -1,0 +1,57 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // read the first array
+        int n1 = sc.nextInt();
+        int[] arr1 = new int[n1];
+        for (int i = 0; i < n1; i++) {
+            arr1[i] = sc.nextInt();
+        }
+        
+        // read the second array
+        int n2 = sc.nextInt();
+        int[] arr2 = new int[n2];
+        for (int i = 0; i < n2; i++) {
+            arr2[i] = sc.nextInt();
+        }
+        
+        // read the third array
+        int n3 = sc.nextInt();
+        int[] arr3 = new int[n3];
+        for (int i = 0; i < n3; i++) {
+            arr3[i] = sc.nextInt();
+        }
+        
+        // find the common elements
+        Set<Integer> common = new HashSet<>();
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>();
+        for (int i : arr1) {
+            set1.add(i);
+        }
+        for (int i : arr2) {
+            set2.add(i);
+        }
+        for (int i : arr3) {
+            if (set1.contains(i) && set2.contains(i)) {
+                common.add(i);
+            }
+        }
+        
+        // sort the common elements and print them
+        List<Integer> list = new ArrayList<>(common);
+        Collections.sort(list);
+        for (int i : list) {
+            System.out.print(i + " ");
+        }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
