@@ -1,0 +1,68 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        if(n<5 || n>15)
+        {
+            System.out.print("Invalid");
+            return;
+        }
+        int[] array = new int[n];  
+        for(int i = 0; i<n; i++)
+        {
+            array[i] = obj.nextInt();
+        }
+        int ch = obj.nextInt();
+        int temp;
+        if(ch==1)
+        {
+        for(int i= 0; i<array.length; i++)
+        {     
+            for(int j = i+1; j<array.length; j++)
+            {     
+               if(array[i]>array[j])
+               {    
+                   temp = array[i];    
+                   array[i] = array[j];    
+                   array[j] = temp;    
+               }     
+            }     
+        }         
+        for (int i=1; i<array.length; i++)
+        {     
+            System.out.print(array[i] + " ");    
+        } 
+        }
+        else if(ch == 2)
+        {
+             for(int i=0; i<array.length; i++)
+             {     
+            for(int j=i+1; j<array.length; j++) 
+            {     
+               if(array[i]<array[j])
+               {    
+                   temp = array[i];    
+                   array[i] = array[j];    
+                   array[j] = temp;    
+               }     
+            }     
+        }       
+        for (int i = 0; i < array.length; i++)
+        {     
+            System.out.print(array[i] + " ");    
+        }    
+        }
+        else
+        {
+            System.out.print("Invalid");
+        }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
